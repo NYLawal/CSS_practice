@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specificity and Inheritance Practice</title>
+
+    <style>
+      body div {
+        border: 1px dotted rgb(35, 16, 105);
+        width: 95%;
+      }
+      #header_div {
+        margin: 20px auto 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(83, 4, 97);
+        background-color: rgb(240, 175, 248);
+      }
+
+      #header_div h1,
+      h3 {
+        text-align: center;
+      }
+
+      #main_div {
+        background-color: rgb(83, 4, 97);
+        margin: 0 auto 0;
+        min-height: 500px;
+      }
+
+      .heading_main {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        border-bottom: 1px solid rgb(226, 248, 147);
+        width: 40%;
+        margin: 10px auto;
+        font-style: italic;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .column_main {
+        width: 40%;
+        display: inline-block;
+        margin-left: 84px;
+        margin-top: 30px;
+        border: none;
+      }
+
+      #mylikes,
+      #mydislikes {
+        text-align: left;
+        color: rgb(49, 104, 3);
+      }
+
+      .likes,
+      .dislikes {
+        text-align: center;
+        color: rgb(19, 4, 88);
+        font-size: larger;
+        font-weight: bold;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        list-style-type: none;
+      }
+
+      #dislike_2,
+      #dislike_4,
+      #dislike_6,
+      #dislike_8 {
+        color: rgb(194, 33, 33);
+      }
+
+      .likes_list,
+      .dislikes_list {
+        margin: 20px auto 30px 10px;
+        color: rgb(124, 5, 148);
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        align-items: center;
+        background-color: aliceblue;
+        border-radius: 20px;
+      }
+
+      #like_1,
+      #like_3,
+      #like_5,
+      #like_7 {
+        color: rgb(194, 33, 33);
+      }
+
+      #like_5,
+      #like_3,
+      #dislike_7,
+      #dislike_1 {
+        background-color: rgb(142, 231, 209);
+      }
+
+      .likes_list:nth-child(even) {
+        background-color: rgb(217, 228, 123);
+      }
+
+      .dislikes_list:nth-child(odd) {
+        background-color: rgb(217, 228, 123);
+      }
+
+      .dislikes .dislikes_list span {
+        background-color: rgb(7, 184, 160);
+      }
+
+      .likes_list span,
+      .dislikes_list span {
+        border-radius: 50%;
+        background-color: rgb(228, 195, 11);
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        color: rgb(107, 0, 89);
+        padding-top: 4px;
+        margin: 10px 10px 10px 10px;
+        font-style: italic;
+      }
+
+      #footer_div {
+        margin: 0 auto 0;
+        padding-top: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(124, 112, 4);
+        background-color: rgb(236, 147, 248);
+        height: 30px;
+        text-align: center;
+        font-weight: bold;
+        border-top: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <!-- A header for my likes and dislikes page-->
+    <header>
+      <div id="header_div">
+        <h1>MY LIKES AND DISLIKES</h1>
+        <h3 style="color: rgb(175, 158, 5)">Welcome to My Page!</h3>
+      </div>
+    </header>
+
+    <main>
+      <!-- These are the actual columns showing my likes and dislikes-->
+      <div id="main_div">
+        <!--Here are my likes-->
+        <div class="column_main">
+          <p class="heading_main">LIKES</p>
+
+          <ol class="likes" id="mylikes">
+            <li class="likes_list" id="like_1">
+              <span>1</span>I like being content
+            </li>
+            <li class="likes_list" id="like_2">
+              <span>2</span>I adore positive people
+            </li>
+            <li class="likes_list" id="like_3">
+              <span>3</span>I enjoy viewing nature
+            </li>
+            <li class="likes_list" id="like_4">
+              <span>4</span>I'm keen on trying something new
+            </li>
+            <li class="likes_list" id="like_5">
+              <span>5</span>I love DIY crafts and repairs
+            </li>
+            <li class="likes_list" id="like_6">
+              <span>6</span>I'm into researching
+            </li>
+            <li class="likes_list" id="like_7">
+              <span>7</span>I find gardening wonderful
+            </li>
+            <li class="likes_list" id="like_8">
+              <span>8</span>I'm really interested in solving problems
+            </li>
+          </ol>
+        </div>
+
+        <!--Here are my dislikes-->
+        <div class="column_main">
+          <p class="heading_main">DISLIKES</p>
+
+          <ul class="dislikes" id="mydislikes">
+            <li class="dislikes_list" id="dislike_1">
+              <span>#</span>I hate bullies
+            </li>
+            <li class="dislikes_list" id="dislike_2">
+              <span>#</span>I dislike sleeping with lights on
+            </li>
+            <li class="dislikes_list" id="dislike_3">
+              <span>#</span>I abhor bad breath
+            </li>
+            <li class="dislikes_list" id="dislike_4">
+              <span>#</span>I loathe reckless driving
+            </li>
+            <li class="dislikes_list" id="dislike_5">
+              <span>#</span>I detest laziness
+            </li>
+            <li class="dislikes_list" id="dislike_6">
+              <span>#</span>I don't like muddy floors
+            </li>
+            <li class="dislikes_list" id="dislike_7">
+              <span>#</span>I can't bear the smell of perfume
+            </li>
+            <li class="dislikes_list" id="dislike_8">
+              <span>#</span>I can't stand the smell of dust
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!--A footnote-->
+    <footer>
+      <div id="footer_div">Thanks for checking!</div>
+    </footer>
+
+  </body>
+</html>
